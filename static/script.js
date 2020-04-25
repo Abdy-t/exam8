@@ -9,8 +9,6 @@ async function getCountry() {
     if (response.ok) {
         console.log(response);
         let countries = await response.json();
-        let aa = JSON.stringify(countries);
-        console.log("aaa"+aa);
         console.log(countries);
         for (let i = 0; i < countries.length; i++){
             let c = {
@@ -21,7 +19,6 @@ async function getCountry() {
                 flag: countries[i].flag
 
             };
-            console.log(c);
             document.getElementsByTagName('div')[0].append(createCountryElement(c));
         }
     } else alert("Such a country does not exist")
